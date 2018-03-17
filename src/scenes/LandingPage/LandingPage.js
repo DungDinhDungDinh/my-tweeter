@@ -1,22 +1,54 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Glyphicon } from 'react-bootstrap';
 
-import * as Styles from './LandingPage.css';
+import Styles from './LandingPage.scss';
+import TweetButton from '../../components/TweetButton';
+import AddTweetModal from '../../scenes/AddTweetModal';
 
 class LandingPage extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShowTweetModal: false,
+    }
+  }
+
+  showTweetModal = () => {
+    this.setState({ isShowTweetModal: true });
+  }
+
   render() {
-    console.log('fffffff', Styles);
     return (
       <Grid>
-        <Row className="headerSession">
+        <Row className={Styles.headerSession}>
           <Col className="left-column">
-            <span>sadasdas</span>
+            <div>
+              <div className={Styles.tab}>
+                <a href="" title="Home">
+                  <Glyphicon glyph="glyphicon glyphicon-home" />
+                  Home
+                </a>
+              </div>
+              <div className={Styles.tab} >
+                <a href="" title="Home">
+                  <Glyphicon glyph="glyphicon glyphicon-bell" />
+                  Notifications
+                </a>
+              </div>
+              <div className={Styles.tab}>
+                <a href="" title="Home" >
+                  <Glyphicon glyph="glyphicon glyphicon-envelope" />
+                  Messages
+                </a>
+              </div>
+            </div>
           </Col>
 
           <Col className="logo">
           </Col>
 
           <Col className="right-column">
+            <TweetButton onClick={this.showTweetModal}/>
           </Col>
         </Row>
 
@@ -24,6 +56,7 @@ class LandingPage extends React.PureComponent {
         </Row>
 
         <Row className="content-session">
+          {this.state.isShowTweetModal && <AddTweetModal />}
         </Row>
       </Grid>
     );
