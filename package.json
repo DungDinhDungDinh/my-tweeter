@@ -2,17 +2,17 @@
   "name": "my-tweeter",
   "version": "0.1.0",
   "private": true,
-  "license" : "",
+  "license": "",
   "dependencies": {
+    "node-sass": "^4.7.2",
     "node-sass-chokidar": "^1.1.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "sass-loader": "^6.0.7"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
