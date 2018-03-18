@@ -3,3 +3,17 @@
   padding-right: 10px;
   font-size: 15px;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  .rightHeader {
+    margin-left: auto;
+  }
+  .tweetLogo {
+    margin: 0 auto;
+    > img {
+      width: 30px;
+    }
+  }
+}
