@@ -1,10 +1,14 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
+import TweetButton from '../../components/TweetButton';
+
 import Styles from './AddTweetModal.scss';
 
 class AddTweetModal extends React.PureComponent {
   render() {
+    const { addTweet, closeTweetModal, tweetInputRef } = this.props;
+
     return (
       <div className="static-modal">
         <Modal.Dialog>
@@ -12,11 +16,13 @@ class AddTweetModal extends React.PureComponent {
             <Modal.Title>Modal title</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body>One fine body...</Modal.Body>
+          <Modal.Body>
+            <input type="text" ref={tweetInputRef}/>
+          </Modal.Body>
 
           <Modal.Footer>
-            <Button>Close</Button>
-            <Button bsStyle="primary">Save changes</Button>
+            <Button onClick={closeTweetModal}>Close</Button>
+            <TweetButton onClick={addTweet} bsStyle="primary" />
           </Modal.Footer>
         </Modal.Dialog>
       </div>
