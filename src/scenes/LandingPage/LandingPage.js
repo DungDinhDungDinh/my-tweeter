@@ -64,7 +64,7 @@ class LandingPage extends React.Component {
           </Col>
 
           <Col className={Styles.tweetLogo}>
-            <img src={TweetIcon} />
+            <img src={TweetIcon} alt=""/>
           </Col>
 
           <Col className={Styles.rightHeader}>

@@ -52,6 +52,8 @@ export const splitTweet = (tweetStr) => {
     }
 
     let redundantTweetsLength = 0;
+
+    // eslint-disable-next-line
     while ((redundantTweetsLength = calcRedundantTweetsLength(tweetArr, totalTweet)) > 0) {
       totalTweet += Math.ceil(redundantTweetsLength / TWEET_LENGTH);
       tweetArr = doSplitTweet(tweetStr, totalTweet);

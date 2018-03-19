@@ -5,10 +5,8 @@ import Styles from './Avatar.scss';
 
 class Avatar extends React.PureComponent {
   render() {
-    const { tweet } = this.props;
-
     return (
-      <img src={avatar} className={Styles.avatar}/>
+      <img src={avatar} className={Styles.avatar} alt=""/>
     );
   }
 }
