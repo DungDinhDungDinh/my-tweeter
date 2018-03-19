@@ -8,9 +8,6 @@ import AddTweetModal from '../../scenes/AddTweetModal';
 import TweetIcon from './tweet-icon.png';
 import Styles from './LandingPage.scss';
 
-const TWEET_LENGTH = 50;
-const END_CHARS = '!@#$%^&*()_+\-=\[\]{};\':"\\|,.<>\/? ';
-
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
@@ -32,6 +29,9 @@ class LandingPage extends React.Component {
   addTweet = () => {
     const tweetStr = this.tweetInput.value;
     const newTweets = splitTweet(tweetStr);
+    if(newTweets === -1) {
+      return window.alert('Invalid message!!');
+    }
     this.setState({ allTweets: [...this.state.allTweets, ...newTweets] });
     this.closeTweetModal();
   }
