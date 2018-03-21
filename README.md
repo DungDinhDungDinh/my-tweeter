@@ -1,4 +1,4 @@
-## I use create-react-app to build an React app without configuration like Webpack or Babel, or any build configuration in case I want to deploy this application to production.
+I use create-react-app to build an React app without configuration like Webpack or Babel, or any build configuration in case I want to deploy this application to production.
 
 ## About splitTweet function:
 
